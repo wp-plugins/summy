@@ -1,4 +1,4 @@
-=== Plugin Name ===
+=== Summy: Excerpt Extraction ===
 Contributors: chr15
 Donate link: https://flattr.com/donation/give/to/chr15
 Tags: auto, excerpt, generation, extraction, summary
