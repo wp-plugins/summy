@@ -20,17 +20,6 @@ function summy_deactivate()
  */
 function summy_activate()
 {
-	/** 
-	 * @todo this won't work you idiot...
-	 */
-	if(version_compare(PHP_VERSION, '5.3', '<'))
-	{
-		load_plugin_textdomain('summy', false, 'summy/lang');
-		$message = __('WP-Summy requires PHP version 5.3 or greater.', 'summy');
-		deactivate_plugins(dirname(__FILE__));
-		wp_die($message, '', array('response' => 200, 'back_link' => true));
-	}
-
 	update_option('summy', array(
 		'rate' => 20,
 		'language' => 'en',
