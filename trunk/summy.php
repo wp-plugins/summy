@@ -1,10 +1,10 @@
 <?php
 
 /*
-  Plugin Name: Summy: Except Extraction
+  Plugin Name: Summy: Excerpt Extraction
   Plugin URI: http://www.komposta.net/article/wp-summy
   Description: Summy can generate excerpts for your posts by applying various algorithms for automatic summarization extraction.
-  Version: 1.0
+  Version: 1.0.1
   Author: Christodoulos Tsoulloftas
   Author URI: http://www.komposta.net
   ---------------------------------------------------------------------------------
