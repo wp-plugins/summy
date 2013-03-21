@@ -2,7 +2,7 @@
 
 /**
  * @package		Summy
- * @version		$Id: Text.php 103 2013-02-04 21:56:04Z Tefra $
+ * @version		$Id: Text.php 128 2013-03-17 23:44:07Z Tefra $
  * @author		Christodoulos Tsoulloftas
  * @copyright	Copyright 2011-2013, http://www.komposta.net
  */
@@ -28,7 +28,7 @@ class Text
 		{
 			return $string;
 		}
-		
+
 		// Make Paragraphs from html
 		$string = str_replace('</p>', "\n", $string);
 		// Remove html tags

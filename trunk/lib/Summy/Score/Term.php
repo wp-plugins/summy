@@ -2,7 +2,7 @@
 
 /**
  * @package		Summy
- * @version		$Id: Term.php 93 2013-02-04 18:26:25Z Tefra $
+ * @version		$Id: Term.php 125 2013-03-16 17:49:26Z Tefra $
  * @author		Christodoulos Tsoulloftas
  * @copyright	Copyright 2011-2013, http://www.komposta.net
  */
@@ -15,13 +15,13 @@ class Term
 
 	/**
 	 * Language identifier (gr,en)
-	 * @var string 
+	 * @var string
 	 */
 	private $_language = null;
 
 	/**
 	 * Database adapter
-	 * @var object 
+	 * @var object
 	 */
 	private $_dbAdapter = null;
 
@@ -121,7 +121,7 @@ class Term
 	}
 
 	/**
-	 * Rank sentences by TF-ISF http://en.wikipedia.org/wiki/Tf-idf
+	 * Rank sentences by TF-IDF http://en.wikipedia.org/wiki/Tf-idf
 	 *
 	 * @param integer $totalSentences
 	 * @param array $tf
@@ -137,12 +137,11 @@ class Term
 		$language = $this->getLanguage();
 		$sql = $db->query("SELECT COUNT(*) as total FROM document WHERE language = ?", array($language))->current();
 		$totalDocuments = $sql['total'] + 1;
-		$terms = $db->platform->quoteValueList(array_keys($tf));
-		$sql = $db->query("SELECT id, documents FROM term WHERE id IN ({$terms}) AND language = ?", array($language));
-
+		$terms = implode(',', array_map(array($db->driver->getConnection()->getResource(), 'quote'), array_keys($tf)));
+		$sql = $db->query("SELECT term, documents FROM term WHERE term IN ({$terms}) AND language = ?", array($language));
 		foreach($sql AS $row)
 		{
-			$docFreq[$row['id']] = $row['documents'];
+			$docFreq[$row['term']] = $row['documents'];
 		}
 
 		foreach($tf AS $word => $frequency)
@@ -170,25 +169,25 @@ class Term
 	 */
 	public function tfridf($totalSentences, $tf = array(), $sf = array())
 	{
-		$wordScore = $docFreq =  $totFreq = array();
+		$wordScore = $docFreq = $totFreq = array();
 		$totalWords = array_sum($tf);
 		$db = $this->getAdapter();
 		$language = $this->getLanguage();
 		$sql = $db->query("SELECT COUNT(*) as total FROM document WHERE language = ?", array($language))->current();
 		$totalDocuments = $sql['total'] + 1;
-		$terms = $db->platform->quoteValueList(array_keys($tf));
-		$sql = $db->query("SELECT id, frequency, documents FROM term WHERE id IN ({$terms}) AND language = ?", array($language));
+		$terms = implode(',', array_map(array($db->driver->getConnection()->getResource(), 'quote'), array_keys($tf)));
+		$sql = $db->query("SELECT term, frequency, documents FROM term WHERE term IN ({$terms}) AND language = ?", array($language));
 
 		foreach($sql AS $row)
 		{
-			$docFreq[$row['id']] = $row['documents'];
-			$totFreq[$row['id']] = $row['frequency'];
+			$docFreq[$row['term']] = $row['documents'];
+			$totFreq[$row['term']] = $row['frequency'];
 		}
 
 		foreach($tf AS $word => $frequency)
 		{
-			$docFreq[$word] += 1;
-			$totFreq[$word] += $frequency;
+			$docFreq[$word] = isset($docFreq[$word]) ? $docFreq[$word] + 1 : 1;
+			$totFreq[$word] = isset($totFreq[$word]) ? $totFreq[$word] + $frequency : $frequency;
 			// Normalized frequency
 			$_tf = $frequency / $totalWords;
 			$_idf = log($totalDocuments / $docFreq[$word]);
