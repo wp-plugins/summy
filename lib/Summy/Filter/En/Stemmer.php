@@ -6,7 +6,7 @@
  * were borrowed from the (broken) implementation by Jon Abernathy.
  *
  * @package		Summy
- * @version		$Id: Stemmer.php 88 2013-02-04 13:25:53Z Tefra $
+ * @version		$Id: Stemmer.php 128 2013-03-17 23:44:07Z Tefra $
  * @author		Christodoulos Tsoulloftas
  * @copyright	Copyright 2011-2013, http://www.komposta.net
  */
@@ -144,7 +144,7 @@ class Stemmer
 				self::replace($word, 'IVENESS', 'IVE', 0) OR self::replace($word, 'FULNESS', 'FUL', 0) OR self::replace($word, 'OUSNESS', 'OUS', 0) OR self::replace($word, 'ALISM', 'AL', 0);
 				break;
 
-			case 'S':
+			case 'T':
 				self::replace($word, 'BILITI', 'BLE', 0) OR self::replace($word, 'ALITI', 'AL', 0) OR self::replace($word, 'IVITI', 'IVE', 0);
 				break;
 		}

@@ -2,7 +2,7 @@
 
 /**
  * @package		Summy
- * @version		$Id: Core.php 105 2013-02-05 00:44:51Z Tefra $
+ * @version		$Id: Core.php 128 2013-03-17 23:44:07Z Tefra $
  * @author		Christodoulos Tsoulloftas
  * @copyright	Copyright 2011-2013, http://www.komposta.net
  */
@@ -154,7 +154,7 @@ class Core
 			'rate' => 20,
 			'language' => 'gr',
 			'termScore' => 'tfisf',
-			'positionScore' => 'news',
+			'positionScore' => 'article',
 			'minWordsLimit' => 6,
 			'maxWordsLimit' => 20,
 			'TW' => 1,
@@ -186,12 +186,16 @@ class Core
 
 		$text = $textFilter->clear($text);
 		$text = $textFilter->process($text);
-		$terms = array_unique(explode(" ", $text));
+		$terms = array_filter(explode(" ", $text));
 		foreach($terms AS $term)
 		{
 			foreach($wordFilters AS $filter)
 			{
 				$term = $filter->filter($term);
+				if($term === false)
+				{
+					break;
+				}
 			}
 
 			if($term !== false)
@@ -237,7 +241,7 @@ class Core
 			arsort($this->sentenceScores);
 
 			$i = 0;
-			$total = ceil(($this->config['rate'] / 100)  * $this->totalSentences);
+			$total = ceil(($this->config['rate'] / 100) * $this->totalSentences);
 			$indexes = array_keys($this->sentenceScores);
 			//Grab the top x sentences
 			while($i < $total)
@@ -257,7 +261,7 @@ class Core
 	}
 
 	/**
-	 * Process senteces, words and produce the core statistics
+	 * Process sentences, words and produce the core statistics
 	 * - Loop through sentences
 	 * - Extra text filtering
 	 * - Build the stopped words, stemmed words, TF, SF, sentence word index, keywords and word scores lists,
@@ -354,7 +358,7 @@ class Core
 	}
 
 	/**
-	 * Fetch the summary body
+	 * Returns the summary body
 	 * @return string
 	 */
 	public function getSummaryText()
@@ -364,7 +368,7 @@ class Core
 	}
 
 	/**
-	 * Fetch the original text with the summary sentences highlighted
+	 * Returns the original text with the summary sentences highlighted
 	 * @return string
 	 */
 	public function getDiffText()
@@ -385,12 +389,12 @@ class Core
 
 	/**
 	 *
-	 * @var type 
+	 * @var type
 	 */
 	static $instances = array();
 
 	/**
-	 * 
+	 *
 	 * @return type
 	 */
 	public static function instance()

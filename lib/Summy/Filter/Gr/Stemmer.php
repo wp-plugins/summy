@@ -18,7 +18,7 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *
  * @package		Summy
- * @version		$Id: Stemmer.php 88 2013-02-04 13:25:53Z Tefra $
+ * @version		$Id: Stemmer.php 112 2013-03-06 21:56:52Z Tefra $
  * @author		Christodoulos Tsoulloftas
  * @copyright	Copyright 2011-2013, http://www.komposta.net
  */
@@ -118,9 +118,8 @@ class Stemmer
 		$test1 = true;
 
 		//Step1
-		if(preg_match($this->step1regexp, $w))
+		if(preg_match($this->step1regexp, $w, $fp))
 		{
-			preg_match($this->step1regexp, $w, $fp);
 			$stem = $fp[1];
 			$suffix = $fp[2];
 			$w = $stem . $this->step1list[$suffix];
@@ -129,9 +128,8 @@ class Stemmer
 
 		// Step 2a
 		$re = '/^(.+?)(ΑΔΕΣ|ΑΔΩΝ)$/u';
-		if(preg_match($re, $w))
+		if(preg_match($re, $w, $fp))
 		{
-			preg_match($re, $w, $fp);
 			$stem = $fp[1];
 			$w = $stem;
 			$re = '/(ΟΚ|ΜΑΜ|ΜΑΝ|ΜΠΑΜΠ|ΠΑΤΕΡ|ΓΙΑΓΙ|ΝΤΑΝΤ|ΚΥΡ|ΘΕΙ|ΠΕΘΕΡ)$/u';
@@ -143,9 +141,8 @@ class Stemmer
 
 		//Step 2b
 		$re = '/^(.+?)(ΕΔΕΣ|ΕΔΩΝ)$/u';
-		if(preg_match($re, $w))
+		if(preg_match($re, $w, $fp))
 		{
-			preg_match($re, $w, $fp);
 			$stem = $fp[1];
 			$w = $stem;
 			$exept2 = '/(ΟΠ|ΙΠ|ΕΜΠ|ΥΠ|ΓΗΠ|ΔΑΠ|ΚΡΑΣΠ|ΜΙΛ)$/u';
@@ -157,9 +154,8 @@ class Stemmer
 
 		//Step 2c
 		$re = '/^(.+?)(ΟΥΔΕΣ|ΟΥΔΩΝ)$/u';
-		if(preg_match($re, $w))
+		if(preg_match($re, $w, $fp))
 		{
-			preg_match($re, $w, $fp);
 			$stem = $fp[1];
 			$w = $stem;
 
@@ -172,9 +168,8 @@ class Stemmer
 
 		//Step 2d
 		$re = '/^(.+?)(ΕΩΣ|ΕΩΝ)$/u';
-		if(preg_match($re, $w))
+		if(preg_match($re, $w, $fp))
 		{
-			preg_match($re, $w, $fp);
 			$stem = $fp[1];
 			$w = $stem;
 			$test1 = false;
@@ -188,9 +183,8 @@ class Stemmer
 
 		//Step 3
 		$re = '/^(.+?)(ΙΑ|ΙΟΥ|ΙΩΝ)$/u';
-		if(preg_match($re, $w))
+		if(preg_match($re, $w, $fp))
 		{
-			preg_match($re, $w, $fp);
 			$stem = $fp[1];
 			$w = $stem;
 
@@ -204,9 +198,8 @@ class Stemmer
 
 		//Step 4
 		$re = '/^(.+?)(ΙΚΑ|ΙΚΟ|ΙΚΟΥ|ΙΚΩΝ)$/u';
-		if(preg_match($re, $w))
+		if(preg_match($re, $w, $fp))
 		{
-			preg_match($re, $w, $fp);
 			$stem = $fp[1];
 			$w = $stem;
 
@@ -227,17 +220,15 @@ class Stemmer
 			$w = "ΑΓΑΜ";
 		}
 
-		if(preg_match($re2, $w))
+		if(preg_match($re2, $w, $fp))
 		{
-			preg_match($re2, $w, $fp);
 			$stem = $fp[1];
 			$w = $stem;
 			$test1 = false;
 		}
 
-		if(preg_match($re, $w))
+		if(preg_match($re, $w, $fp))
 		{
-			preg_match($re, $w, $fp);
 			$stem = $fp[1];
 			$w = $stem;
 			$test1 = false;
@@ -253,9 +244,8 @@ class Stemmer
 		$re2 = '/^(.+?)(ΑΝΕ)$/';
 		$re3 = '/^(.+?)(ΑΓΑΝΕ|ΗΣΑΝΕ|ΟΥΣΑΝΕ|ΙΟΝΤΑΝΕ|ΙΟΤΑΝΕ|ΙΟΥΝΤΑΝΕ|ΟΝΤΑΝΕ|ΟΤΑΝΕ|ΟΥΝΤΑΝΕ|ΗΚΑΝΕ|ΗΘΗΚΑΝΕ)$/u';
 
-		if(preg_match($re3, $w))
+		if(preg_match($re3, $w, $fp))
 		{
-			preg_match($re3, $w, $fp);
 			$stem = $fp[1];
 			$w = $stem;
 			$test1 = false;
@@ -267,9 +257,8 @@ class Stemmer
 			}
 		}
 
-		if(preg_match($re2, $w))
+		if(preg_match($re2, $w, $fp))
 		{
-			preg_match($re2, $w, $fp);
 			$stem = $fp[1];
 			$w = $stem;
 			$test1 = false;
@@ -286,17 +275,15 @@ class Stemmer
 		$re3 = '/^(.+?)(ΕΤΕ)$/u';
 		$re4 = '/^(.+?)(ΗΣΕΤΕ)$/u';
 
-		if(preg_match($re4, $w))
+		if(preg_match($re4, $w, $fp))
 		{
-			preg_match($re4, $w, $fp);
 			$stem = $fp[1];
 			$w = $stem;
 			$test1 = false;
 		}
 
-		if(preg_match($re3, $w))
+		if(preg_match($re3, $w, $fp))
 		{
-			preg_match($re3, $w, $fp);
 			$stem = $fp[1];
 			$w = $stem;
 			$test1 = false;
@@ -315,9 +302,8 @@ class Stemmer
 
 		//Step 5d
 		$re = '/^(.+?)(ΟΝΤΑΣ|ΩΝΤΑΣ)$/u';
-		if(preg_match($re, $w))
+		if(preg_match($re, $w, $fp))
 		{
-			preg_match($re, $w, $fp);
 			$stem = $fp[1];
 			$w = $stem;
 			$test1 = false;
@@ -336,9 +322,8 @@ class Stemmer
 
 		//Step 5e
 		$re = '/^(.+?)(ΟΜΑΣΤΕ|ΙΟΜΑΣΤΕ)$/u';
-		if(preg_match($re, $w))
+		if(preg_match($re, $w, $fp))
 		{
-			preg_match($re, $w, $fp);
 			$stem = $fp[1];
 			$w = $stem;
 			$test1 = false;
@@ -354,9 +339,8 @@ class Stemmer
 		$re = '/^(.+?)(ΕΣΤΕ)$/u';
 		$re2 = '/^(.+?)(ΙΕΣΤΕ)$/u';
 
-		if(preg_match($re2, $w))
+		if(preg_match($re2, $w, $fp))
 		{
-			preg_match($re2, $w, $fp);
 			$stem = $fp[1];
 			$w = $stem;
 			$test1 = false;
@@ -368,9 +352,8 @@ class Stemmer
 			}
 		}
 
-		if(preg_match($re, $w))
+		if(preg_match($re, $w, $fp))
 		{
-			preg_match($re, $w, $fp);
 			$stem = $fp[1];
 			$w = $stem;
 			$test1 = false;
@@ -386,17 +369,15 @@ class Stemmer
 		$re = '/^(.+?)(ΗΚΑ|ΗΚΕΣ|ΗΚΕ)$/u';
 		$re2 = '/^(.+?)(ΗΘΗΚΑ|ΗΘΗΚΕΣ|ΗΘΗΚΕ)$/u';
 
-		if(preg_match($re2, $w))
+		if(preg_match($re2, $w, $fp))
 		{
-			preg_match($re2, $w, $fp);
 			$stem = $fp[1];
 			$w = $stem;
 			$test1 = false;
 		}
 
-		if(preg_match($re, $w))
+		if(preg_match($re, $w, $fp))
 		{
-			preg_match($re, $w, $fp);
 			$stem = $fp[1];
 			$w = $stem;
 			$test1 = false;
@@ -411,9 +392,8 @@ class Stemmer
 
 		//Step 5h
 		$re = '/^(.+?)(ΟΥΣΑ|ΟΥΣΕΣ|ΟΥΣΕ)$/u';
-		if(preg_match($re, $w))
+		if(preg_match($re, $w, $fp))
 		{
-			preg_match($re, $w, $fp);
 			$stem = $fp[1];
 			$w = $stem;
 			$test1 = false;
@@ -429,9 +409,8 @@ class Stemmer
 		//Step 5i
 		$re = '/^(.+?)(ΑΓΑ|ΑΓΕΣ|ΑΓΕ)$/u';
 
-		if(preg_match($re, $w))
+		if(preg_match($re, $w, $fp))
 		{
-			preg_match($re, $w, $fp);
 			$stem = $fp[1];
 			$w = $stem;
 			$test1 = false;
@@ -449,9 +428,8 @@ class Stemmer
 
 		//Step 5j
 		$re = '/^(.+?)(ΗΣΕ|ΗΣΟΥ|ΗΣΑ)$/u';
-		if(preg_match($re, $w))
+		if(preg_match($re, $w, $fp))
 		{
-			preg_match($re, $w, $fp);
 			$stem = $fp[1];
 			$w = $stem;
 			$test1 = false;
@@ -465,9 +443,8 @@ class Stemmer
 
 		//Step 5k
 		$re = '/^(.+?)(ΗΣΤΕ)$/u';
-		if(preg_match($re, $w))
+		if(preg_match($re, $w, $fp))
 		{
-			preg_match($re, $w, $fp);
 			$stem = $fp[1];
 			$w = $stem;
 			$test1 = false;
@@ -481,9 +458,8 @@ class Stemmer
 
 		//Step 5l
 		$re = '/^(.+?)(ΟΥΝΕ|ΗΣΟΥΝΕ|ΗΘΟΥΝΕ)$/u';
-		if(preg_match($re, $w))
+		if(preg_match($re, $w, $fp))
 		{
-			preg_match($re, $w, $fp);
 			$stem = $fp[1];
 			$w = $stem;
 			$test1 = false;
@@ -497,9 +473,8 @@ class Stemmer
 
 		//Step 5l
 		$re = '/^(.+?)(ΟΥΜΕ|ΗΣΟΥΜΕ|ΗΘΟΥΜΕ)$/u';
-		if(preg_match($re, $w))
+		if(preg_match($re, $w, $fp))
 		{
-			preg_match($re, $w, $fp);
 			$stem = $fp[1];
 			$w = $stem;
 			$test1 = false;
@@ -514,25 +489,22 @@ class Stemmer
 		// Step 6
 		$re = '/^(.+?)(ΜΑΤΑ|ΜΑΤΩΝ|ΜΑΤΟΣ)$/u';
 		$re2 = '/^(.+?)(Α|ΑΓΑΤΕ|ΑΓΑΝ|ΑΕΙ|ΑΜΑΙ|ΑΝ|ΑΣ|ΑΣΑΙ|ΑΤΑΙ|ΑΩ|Ε|ΕΙ|ΕΙΣ|ΕΙΤΕ|ΕΣΑΙ|ΕΣ|ΕΤΑΙ|Ι|ΙΕΜΑΙ|ΙΕΜΑΣΤΕ|ΙΕΤΑΙ|ΙΕΣΑΙ|ΙΕΣΑΣΤΕ|ΙΟΜΑΣΤΑΝ|ΙΟΜΟΥΝ|ΙΟΜΟΥΝΑ|ΙΟΝΤΑΝ|ΙΟΝΤΟΥΣΑΝ|ΙΟΣΑΣΤΑΝ|ΙΟΣΑΣΤΕ|ΙΟΣΟΥΝ|ΙΟΣΟΥΝΑ|ΙΟΤΑΝ|ΙΟΥΜΑ|ΙΟΥΜΑΣΤΕ|ΙΟΥΝΤΑΙ|ΙΟΥΝΤΑΝ|Η|ΗΔΕΣ|ΗΔΩΝ|ΗΘΕΙ|ΗΘΕΙΣ|ΗΘΕΙΤΕ|ΗΘΗΚΑΤΕ|ΗΘΗΚΑΝ|ΗΘΟΥΝ|ΗΘΩ|ΗΚΑΤΕ|ΗΚΑΝ|ΗΣ|ΗΣΑΝ|ΗΣΑΤΕ|ΗΣΕΙ|ΗΣΕΣ|ΗΣΟΥΝ|ΗΣΩ|Ο|ΟΙ|ΟΜΑΙ|ΟΜΑΣΤΑΝ|ΟΜΟΥΝ|ΟΜΟΥΝΑ|ΟΝΤΑΙ|ΟΝΤΑΝ|ΟΝΤΟΥΣΑΝ|ΟΣ|ΟΣΑΣΤΑΝ|ΟΣΑΣΤΕ|ΟΣΟΥΝ|ΟΣΟΥΝΑ|ΟΤΑΝ|ΟΥ|ΟΥΜΑΙ|ΟΥΜΑΣΤΕ|ΟΥΝ|ΟΥΝΤΑΙ|ΟΥΝΤΑΝ|ΟΥΣ|ΟΥΣΑΝ|ΟΥΣΑΤΕ|Υ|ΥΣ|Ω|ΩΝ)$/u';
-		if(preg_match($re, $w))
+		if(preg_match($re, $w, $fp))
 		{
-			preg_match($re, $w, $fp);
 			$stem = $fp[1];
 			$w = $stem . "ΜΑ";
 		}
 
-		if(preg_match($re2, $w) && $test1)
+		if(preg_match($re2, $w, $fp) && $test1)
 		{
-			preg_match($re2, $w, $fp);
 			$stem = $fp[1];
 			$w = $stem;
 		}
 
 		// Step 7 (ΠΑΡΑΘΕΤΙΚΑ)
 		$re = '/^(.+?)(ΕΣΤΕΡ|ΕΣΤΑΤ|ΟΤΕΡ|ΟΤΑΤ|ΥΤΕΡ|ΥΤΑΤ|ΩΤΕΡ|ΩΤΑΤ)$/u';
-		if(preg_match($re, $w))
+		if(preg_match($re, $w, $fp))
 		{
-			preg_match($re, $w, $fp);
 			$stem = $fp[1];
 			$w = $stem;
 		}

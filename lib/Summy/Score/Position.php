@@ -2,7 +2,7 @@
 
 /**
  * @package		Summy
- * @version		$Id: Position.php 93 2013-02-04 18:26:25Z Tefra $
+ * @version		$Id: Position.php 117 2013-03-16 16:37:14Z Tefra $
  * @author		Christodoulos Tsoulloftas
  * @copyright	Copyright 2011-2013, http://www.komposta.net
  */
@@ -29,7 +29,7 @@ class Position
 	}
 
 	/**
-	 * Return the Position Weight for a sentence based on the Baxendale investigation
+	 * Returns the Position Weight for a sentence based on the Baxendale investigation
 	 *
 	 * Baxendale (1958) investigated a sample of 200 paragraphs to determine
 	 * where the important words are most likely to be found. He concluded that
@@ -57,8 +57,8 @@ class Position
 	}
 
 	/**
-	 * Return the Position Weight for a sentence based on the hypothesis that
-	 * first paragraphs/sentences are the most meaningfull to a document, which
+	 * Returns the Position Weight for a sentence based on the hypothesis that
+	 * first paragraphs/sentences are the most meaningful to a document, which
 	 * applies to small articles, like newspaper news.
 	 *
 	 * @param integer $totalParagraphs
@@ -67,7 +67,7 @@ class Position
 	 * @param integer $sentence
 	 * @return float
 	 */
-	public function news($totalParagraphs, $sentencesInParagraph, $paragraph, $sentence)
+	public function article($totalParagraphs, $sentencesInParagraph, $paragraph, $sentence)
 	{
 		return (($totalParagraphs - $paragraph + 1) / $totalParagraphs) * (($sentencesInParagraph - $sentence + 1) / $sentencesInParagraph);
 	}
