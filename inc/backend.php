@@ -43,7 +43,7 @@ $data = array(
 	'minWordsLimit' => max(0, intval($_POST['minWordsLimit'])),
 	'maxWordsLimit' => max(1, intval($_POST['maxWordsLimit'])),
 	'termScore' => 'tfisf',
-	'positionScore' => in_array($_POST['positionScore'], array('baxendale', 'news')) ? $_POST['positionScore'] : null,
+	'positionScore' => in_array($_POST['positionScore'], array('baxendale', 'article')) ? $_POST['positionScore'] : null,
 	'TW' => max(0.0, floatval($_POST['TW'])),
 	'PW' => max(0.0, floatval($_POST['PW'])),
 	'KW' => max(0.0, floatval($_POST['KW']))
@@ -90,7 +90,7 @@ else
 			//'scoredWords' => $summy->scoredWords,
 			//'termFrequency' => $summy->termFrequency,
 			//'sentencesWords' => $summy->sentenceWordsIndex,
-				'config' => $summy->config
+			'config' => $summy->config
 		);
 	}
 	else
