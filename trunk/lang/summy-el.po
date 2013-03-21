@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WP-Summy v1.0\n"
-"POT-Creation-Date: 2013-02-15 01:56+0200\n"
-"PO-Revision-Date: 2013-02-15 01:58+0200\n"
+"POT-Creation-Date: 2013-03-21 16:21+0200\n"
+"PO-Revision-Date: 2013-03-21 16:21+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: el\n"
@@ -34,47 +34,48 @@ msgstr "Εισάγετε ένα έγκυρο ποσοστό εξόδου 1-99."
 msgid "Excerpt generation failed for some reason."
 msgstr "Η δημιουργία περίληψης απέτυχε για άγνωστο λόγο."
 
-#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:16
+#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:15
 msgid "Summy: Excerpt Extraction"
 msgstr "Summy: Εξαγωγή Αποσπάσματος"
 
-#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:22
+#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:21
 msgid "English"
 msgstr "Αγγλικά"
 
-#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:22
+#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:21
 msgid "Greek"
 msgstr "Ελληνικά"
 
-#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:23
-msgid "News Articles"
-msgstr "Άρθρα"
+#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:22
+msgid "Article"
+msgstr "Άρθρο"
 
-#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:23
+#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:22
 msgid "Baxendale"
 msgstr "Baxendale"
 
-#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:31
+#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:30
 msgid "Laguage"
 msgstr "Γλώσσα"
 
-#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:39
+#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:38
 msgid "Output Rate"
 msgstr "Ποσοστό εξόδου"
 
-#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:43
-msgid "Words Limit"
+#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:42
+#, fuzzy
+msgid "Words Limits"
 msgstr "Όρια λέξεων"
 
-#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:44
+#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:43
 msgid "Min"
 msgstr "Min"
 
-#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:45
+#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:44
 msgid "Max"
 msgstr "Max"
 
-#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:48
+#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:47
 msgid ""
 "The sentences that exceed the word limits will be ingored. 0 disables the "
 "limit."
@@ -82,15 +83,16 @@ msgstr ""
 "Οι προτάσεις με αριθμό λέξεων εκτός των ορίων θα αγνοηθούν. Το 0 "
 "απενεργοποιεί το όριο."
 
-#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:53
-msgid "Terms Score Method"
+#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:52
+#, fuzzy
+msgid "Terms Score"
 msgstr "Βαθμολογία Όρων"
 
-#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:55
+#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:54
 msgid "TF-ISF"
 msgstr "TF-ISF"
 
-#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:59
+#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:58
 msgid ""
 "Term Frequency Inverse Sentence Frequency, rewards the less used words in "
 "sentences."
@@ -98,16 +100,17 @@ msgstr ""
 "TF: Συχνότητα Όρου ISF: Αντίστροφη Συχνότητα Προτάσεων, επιβραβεύει τους "
 "όρους με χαμηλή συχνότητα στις προτάσεις."
 
-#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:64
-msgid "Position Score Method"
+#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:63
+#, fuzzy
+msgid "Position Score"
 msgstr "Βαθμολογία θέσης"
 
-#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:72
-msgid "The News Articles method ranks higher top paragraphs/sentence."
+#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:71
+msgid "The Article method ranks higher top paragraphs/sentence."
 msgstr ""
-"Η μέθοδος Άρθρα βαθμολογεί υψηλότερα τις αρχικές παραγράφους/προτάσεις."
+"Η μέθοδος `Άρθρο` βαθμολογεί υψηλότερα τις αρχικές παραγράφους/προτάσεις."
 
-#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:73
+#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:72
 msgid ""
 "The Baxendale's method ranks higher the first and last sentences in a "
 "paragraph."
@@ -115,42 +118,43 @@ msgstr ""
 "Η μέθοδος Baxendale βαθμολογεί υψηλότερα την πρώτη και τελευταία πρόταση "
 "κάθε παραγράφου."
 
-#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:78
-msgid "Score Weights"
+#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:77
+#, fuzzy
+msgid "Scores Weights"
 msgstr "Βάρη Βαθμολογιών"
 
-#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:79
+#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:78
 msgid "TW"
 msgstr "TW"
 
-#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:80
+#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:79
 msgid "PW"
 msgstr "PW"
 
-#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:81
+#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:80
 msgid "KW"
 msgstr "KW"
 
-#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:84
+#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:83
 msgid "Sentence(i) Score =  TW * T(i) + PW * P(i) + KW * K(i)."
 msgstr "Βαθμολογία Πρότασης(ι) =  TW * T(i) + PW * P(i) + KW * K(i)."
 
-#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:85
+#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:84
 msgid ""
 "The T, P, K are each sentence's terms score, position score and keywords "
 "score from title."
 msgstr ""
 "Οι μεταβλητές T, P, K είναι οι βαθμολογίες όρων, θέσης και τίτλου αντίστοιχα."
 
-#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:86
+#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:85
 msgid "The TW, PW, KW are the scores weights."
 msgstr "Οι μεταβλητές TW, PW, KW είναι τα βάρη των βαθμολογιών."
 
-#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:87
+#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:86
 msgid "The weights are unsigned float values, set a weight to 0 to disable it."
 msgstr "Τα βάρη πέρουν δεκαδικούς αριθμούς, για να απενεργοποίηση αφήστε τα 0."
 
-#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:92
+#: D:\wamp\www\wordpress\wp-content\plugins\summy/inc/ui.php:91
 msgid "Summarize"
 msgstr "Περίληψη"
 

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @package		WP-Summy
  * @author		Christodoulos Tsoulloftas
@@ -20,7 +19,7 @@ function summy_add_meta_box()
 {
 	$def = get_option('summy');
 	$languages = array('en' => __('English', 'summy'), 'gr' => __('Greek', 'summy'));
-	$positions = array('news' => __('News Articles', 'summy'), 'baxendale' => __('Baxendale', 'summy'));
+	$positions = array('article' => __('Article', 'summy'), 'baxendale' => __('Baxendale', 'summy'));
 	wp_nonce_field('summy-summy-summarize', '_summynonce');
 
 	?>
@@ -35,12 +34,12 @@ function summy_add_meta_box()
 				<?php endforeach; ?>
 			</select>
 		</li>
-		<li> 
+		<li>
 			<label for="summyRate"><?php _e('Output Rate', 'summy') ?>:</label>
 			<input type="number" name="summy[rate]" id="summyRate" min="1" max="99" value="<?php echo esc_attr($def['rate']); ?>" />%
 		</li>
 		<li>
-			<label><?php _e('Words Limit', 'summy') ?>:</label>
+			<label><?php _e('Words Limits', 'summy') ?>:</label>
 			<input type="number" name="summy[minWordsLimit]" id="summyMinWordsLimit" min="1" max="99" value="<?php echo esc_attr($def['minWordsLimit']); ?>" /> <?php _e('Min', 'summy') ?>
 			<input type="number" name="summy[maxWordsLimit]" id="summyMaxWordsLimit" min="1" max="99" value="<?php echo esc_attr($def['maxWordsLimit']); ?>" /> <?php _e('Max', 'summy') ?>
 			<p>
@@ -50,7 +49,7 @@ function summy_add_meta_box()
 			</p>
 		</li>
 		<li>
-			<label for="summyTermScore"><?php _e('Terms Score Method', 'summy') ?>:</label>
+			<label for="summyTermScore"><?php _e('Terms Score', 'summy') ?>:</label>
 			<select name="summy[termScore]" id="summyTermScore">
 				<option value="tfisf"><?php _e('TF-ISF', 'summy') ?></option>
 			</select>
@@ -61,7 +60,7 @@ function summy_add_meta_box()
 			</p>
 		</li>
 		<li>
-			<label for="summyPositionScore"><?php _e('Position Score Method', 'summy') ?>:</label>
+			<label for="summyPositionScore"><?php _e('Position Score', 'summy') ?>:</label>
 			<select name="summy[positionScore]" id="summyPositionScore">
 				<?php foreach($positions AS $key => $text): ?>
 					<option value="<?php echo $key; ?>"<?php echo $key == $def['positionScore'] ? ' selected="selected"' : ''; ?>><?php echo $text; ?></option>
@@ -69,13 +68,13 @@ function summy_add_meta_box()
 			</select>
 			<p>
 			<ul class="description ul-square">
-				<li><?php _e('The News Articles method ranks higher top paragraphs/sentence.', 'summy'); ?></li>
+				<li><?php _e('The Article method ranks higher top paragraphs/sentence.', 'summy'); ?></li>
 				<li><?php _e('The Baxendale\'s method ranks higher the first and last sentences in a paragraph.', 'summy'); ?></li>
 			</ul>
 			</p>
 		</li>
 		<li>
-			<label><?php _e('Score Weights', 'summy') ?>:</label>
+			<label><?php _e('Scores Weights', 'summy') ?>:</label>
 			<input type="number" name="summy[TW]" id="summyTW" min="0.0" max="5.0" value="<?php echo esc_attr($def['TW']); ?>" step="0.1" /> <?php _e('TW', 'summy') ?>
 			<input type="number" name="summy[PW]" id="summyPW" min="0.0" max="5.0" value="<?php echo esc_attr($def['PW']); ?>" step="0.1" /> <?php _e('PW', 'summy') ?>
 			<input type="number" name="summy[KW]" id="summyKW" min="0.0" max="5.0" value="<?php echo esc_attr($def['KW']); ?>" step="0.1" /> <?php _e('KW', 'summy') ?>
