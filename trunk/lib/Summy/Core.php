@@ -2,7 +2,6 @@
 
 /**
  * @package		Summy
- * @version		$Id: Core.php 128 2013-03-17 23:44:07Z Tefra $
  * @author		Christodoulos Tsoulloftas
  * @copyright	Copyright 2011-2013, http://www.komposta.net
  */
@@ -242,22 +241,28 @@ class Core
 
 			$i = 0;
 			$total = ceil(($this->config['rate'] / 100) * $this->totalSentences);
-			$indexes = array_keys($this->sentenceScores);
 			//Grab the top x sentences
-			while($i < $total)
+			foreach($this->sentenceScores AS $index => $score)
 			{
-				$this->summarySentences[] = array_shift($indexes);
+				if($score == 0 || $total == $i)
+				{
+					break;
+				}
 				$i++;
+				$this->summarySentences[] = $index;
+			}
+
+			//Return false if no senteces made it to the summary
+			if(empty($this->summarySentences))
+			{
+				return false;
 			}
 
 			//Re-sort them by original order
 			sort($this->summarySentences);
 			return true;
 		}
-		else
-		{
-			return false;
-		}
+		return false;
 	}
 
 	/**
@@ -407,5 +412,3 @@ class Core
 		return self::$instances[$class];
 	}
 }
-
-?>

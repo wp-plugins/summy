@@ -2,7 +2,6 @@
 
 /**
  * @package		Summy
- * @version		$Id: StopWords.php 93 2013-02-04 18:26:25Z Tefra $
  * @author		Christodoulos Tsoulloftas
  * @copyright	Copyright 2011-2013, http://www.komposta.net
  */
@@ -561,5 +560,3 @@ class StopWords extends \Summy\Filter\StopWords
 		'ZERO'
 	);
 }
-
-?>

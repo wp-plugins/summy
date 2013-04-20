@@ -2,7 +2,6 @@
 
 /**
  * @package		Summy
- * @version		$Id: StopWords.php 88 2013-02-04 13:25:53Z Tefra $
  * @author		Christodoulos Tsoulloftas
  * @copyright	Copyright 2011-2013, http://www.komposta.net
  */
@@ -35,5 +34,3 @@ abstract class StopWords
 		return isset($this->_stopWords[$value]) ? false : $value;
 	}
 }
-
-?>

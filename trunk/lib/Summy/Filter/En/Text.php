@@ -2,7 +2,6 @@
 
 /**
  * @package		Summy
- * @version		$Id: Text.php 128 2013-03-17 23:44:07Z Tefra $
  * @author		Christodoulos Tsoulloftas
  * @copyright	Copyright 2011-2013, http://www.komposta.net
  */
@@ -82,5 +81,3 @@ class Text
 		return trim($value);
 	}
 }
-
-?>

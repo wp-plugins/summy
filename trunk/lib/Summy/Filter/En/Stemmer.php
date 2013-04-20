@@ -6,7 +6,6 @@
  * were borrowed from the (broken) implementation by Jon Abernathy.
  *
  * @package		Summy
- * @version		$Id: Stemmer.php 128 2013-03-17 23:44:07Z Tefra $
  * @author		Christodoulos Tsoulloftas
  * @copyright	Copyright 2011-2013, http://www.komposta.net
  */
@@ -376,5 +375,3 @@ class Stemmer
 		return preg_match("#($c$v$c)$#", $str, $matches) AND strlen($matches[1]) == 3 AND $matches[1]{2} != 'W' AND $matches[1]{2} != 'X' AND $matches[1]{2} != 'Y';
 	}
 }
-
-?>

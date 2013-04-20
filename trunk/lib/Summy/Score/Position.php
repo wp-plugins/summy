@@ -2,7 +2,6 @@
 
 /**
  * @package		Summy
- * @version		$Id: Position.php 117 2013-03-16 16:37:14Z Tefra $
  * @author		Christodoulos Tsoulloftas
  * @copyright	Copyright 2011-2013, http://www.komposta.net
  */
@@ -72,5 +71,3 @@ class Position
 		return (($totalParagraphs - $paragraph + 1) / $totalParagraphs) * (($sentencesInParagraph - $sentence + 1) / $sentencesInParagraph);
 	}
 }
-
-?>
