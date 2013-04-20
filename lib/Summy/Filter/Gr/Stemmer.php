@@ -18,7 +18,6 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *
  * @package		Summy
- * @version		$Id: Stemmer.php 112 2013-03-06 21:56:52Z Tefra $
  * @author		Christodoulos Tsoulloftas
  * @copyright	Copyright 2011-2013, http://www.komposta.net
  */
@@ -511,5 +510,3 @@ class Stemmer
 		return $w;
 	}
 }
-
-?>

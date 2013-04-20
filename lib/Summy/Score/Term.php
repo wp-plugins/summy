@@ -2,7 +2,6 @@
 
 /**
  * @package		Summy
- * @version		$Id: Term.php 125 2013-03-16 17:49:26Z Tefra $
  * @author		Christodoulos Tsoulloftas
  * @copyright	Copyright 2011-2013, http://www.komposta.net
  */
@@ -198,5 +197,3 @@ class Term
 		return $wordScore;
 	}
 }
-
-?>

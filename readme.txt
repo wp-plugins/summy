@@ -4,7 +4,7 @@ Donate link: https://flattr.com/donation/give/to/chr15
 Tags: auto, excerpt, generation, extraction, summary
 Requires at least: 3.5.0
 Tested up to: 3.5.1
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -70,10 +70,11 @@ with linguistics statistics. At least for now it's not included.
 
 == Changelog ==
 
+= 1.0.3 =
+* Fixed bug including null scored sentences in the summary to reach the output rate.
+
 = 1.0.2 =
 * Updated Core Library to [2.0.5](http://summy.komposta.net/index/changelog)
-* * Fixed Bug in English Stemmer (Step 2 Case 'T')
-* * Updated Greek Stemmer to improve performance in same cases up to 50%.
 
 = 1.0.1 =
 * Fixed Typo in plugin name (omg)

@@ -2,7 +2,6 @@
 
 /**
  * @package		Summy
- * @version		$Id: WordLength.php 88 2013-02-04 13:25:53Z Tefra $
  * @author		Christodoulos Tsoulloftas
  * @copyright	Copyright 2011-2013, http://www.komposta.net
  */
@@ -36,5 +35,3 @@ class WordLength
 		return ($this->_limit && mb_strlen($value, 'UTF-8') <= $this->_limit) ? false : $value;
 	}
 }
-
-?>
