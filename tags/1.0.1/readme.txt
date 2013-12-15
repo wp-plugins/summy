@@ -4,7 +4,7 @@ Donate link: https://flattr.com/donation/give/to/chr15
 Tags: auto, excerpt, generation, extraction, summary
 Requires at least: 3.5.0
 Tested up to: 3.5.1
-Stable tag: 1.0.3
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -42,7 +42,7 @@ Wordpress excerpts can be displayed in places where quick summaries are preferab
 When a post has no manual excerpt, WordPress generates ONE automatically by selecting the first 55 words of the post.
 Automatically generated excerpts don't summarize the post properly leaving guests guessing what the post is about.
 Summy will analyze your post's sentences and use the highest ranked that best describe your post, which could lead
-in better search engine results and more targetted audience for your blog. Summy's summaries are not perfect and you
+in better search engine results and more targetted audience for your blog. Summy's summaries are not perfect and you 
 might also need to do some editing before publishing your content but they are a lot better than random 55 words...
 
 == Installation ==
@@ -56,7 +56,7 @@ might also need to do some editing before publishing your content but they are a
 
 To improve system accuracy various NLP algorithms are used. The most
 hard to find or build are the stemming algorithms because they are build
-with specific language rules. If you find or can provide a stemming algorithm
+with specific language rules. If you find or can provide a stemming algorithm 
 for another language please contact me.
 
 = In summy.komposta.net there are more options than this plugin =
@@ -69,12 +69,6 @@ with linguistics statistics. At least for now it's not included.
 1. Settings Panel
 
 == Changelog ==
-
-= 1.0.3 =
-* Fixed bug including null scored sentences in the summary to reach the output rate.
-
-= 1.0.2 =
-* Updated Core Library to [2.0.5](http://summy.komposta.net/index/changelog)
 
 = 1.0.1 =
 * Fixed Typo in plugin name (omg)
